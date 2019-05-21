@@ -13,7 +13,7 @@ class LoginApiTest extends TestCase
 {
    use RefreshDatabase;
 
-    public function setUp()
+    public function setUp():void
     {
         parent::setUp();
 
@@ -28,7 +28,7 @@ class LoginApiTest extends TestCase
     {
         $response = $this->json('POST', route('login'), [
             'email' => $this->user->email,
-            'password' => 'secret',
+            'password' => 'password',
         ]);
 
         $response
